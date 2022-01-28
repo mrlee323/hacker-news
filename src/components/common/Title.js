@@ -4,12 +4,15 @@ import { NavLink } from 'react-router-dom';
 import Responsive from '../common/Responsive';
 import TimeIcon from '../../assets/images/bx_bx-time.svg';
 import RightArrow from '../../assets/images/icon=arrow_right.svg';
+import W_RightArrow from '../../assets/images/orange-icon=arrow_right.svg';
 import Update from '../../assets/images/icon=updated.svg';
+import { lightTheme } from '../../styles/theme';
+import { useSelector } from 'react-redux';
 
 const TodayBlock = styled(Responsive)`
   width: 390px;
-  height: 68px;
-  padding: 40px 20px 0;
+  height: 4.25rem;
+  padding: 2.5rem 1.25rem 0;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -20,8 +23,8 @@ const Today = styled.div`
   align-items: center;
   cursor: pointer;
   h2 {
-    color: #202020;
-    font-size: 24px;
+    color: ${({ theme }) => theme.textColor};
+    font-size: 1.5rem;
     font-weight: 700;
   }
 `;
@@ -30,13 +33,13 @@ const Time = styled.div`
   visibility: hidden;
   display: flex;
   .icon_time {
-    margin-top: 5px;
+    margin-top: 0.3rem;
   }
   .time {
-    color: #b7b7b7;
+    color: var(--gray400);
     font-weight: 500;
-    margin-left: 2px;
-    margin-top: 8px;
+    margin-left: 0.1rem;
+    margin-top: 0.5rem;
   }
 
   ${(props) =>
@@ -58,6 +61,7 @@ const Icon = styled.img.attrs({
 `;
 
 const Title = ({ children, link, ...rest }) => {
+  const theme = useSelector((state) => state.theme.mode);
   const time = () => {
     const date = new Date();
     const hour = date.getHours();
@@ -69,7 +73,10 @@ const Title = ({ children, link, ...rest }) => {
       <NavLink to={`${link}`} style={{ flex: 1, textDecoration: 'none' }}>
         <Today>
           <h2>{children}</h2>
-          <img src={RightArrow} alt="arrow" className="icon_arrow" />
+          <img
+            src={theme === lightTheme ? RightArrow : W_RightArrow}
+            alt="RightArrow"
+          />
         </Today>
       </NavLink>
       <Time timer={children}>

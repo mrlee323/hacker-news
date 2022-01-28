@@ -6,28 +6,29 @@ const Menu = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 7px;
-  background: #fff;
+  padding: 0 0.5rem;
+  background: ${({ theme }) => theme.navColor};
 `;
 const StyledNavLink = styled(NavLink)`
   display: block;
-  padding: 12px 15px;
-  font-size: 15px;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #727272;
+  color: var(--gray500);
   text-align: center;
   text-decoration: none;
+  box-sizing: border-box;
   &.active {
-    color: #333;
+    color: ${({ theme }) => theme.textColor};
     position: relative;
     &::after {
       content: '';
-      width: 42px;
-      height: 3px;
+      width: 2.6rem;
+      height: 0.15rem;
       background: #ed702d;
       position: absolute;
       bottom: 0;
-      border-radius: 2px 2px 0 0;
+      border-radius: 0.2rem 0.2rem 0 0;
       left: 50%;
       transform: translate(-50%, 0);
     }

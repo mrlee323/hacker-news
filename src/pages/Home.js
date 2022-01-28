@@ -8,13 +8,13 @@ import TodayUser from '../components/today/TodayUser';
 import banner from '../assets/images/banner.svg';
 import styled from 'styled-components';
 import Responsive from '../components/common/Responsive';
+const HomeBlock = styled(Responsive)``;
 
 const Home = () => {
-  const HomeBlock = styled(Responsive)``;
   return (
     <HomeBlock>
       <section className="home">
-        <img src={banner} alt="banner" />
+        <img src={banner} alt="banner" style={{ width: '24.4rem' }} />
         <TodayTop />
         <TodayNew />
         <TodayUser />

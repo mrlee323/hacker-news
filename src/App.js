@@ -9,13 +9,19 @@ import Job from './pages/Job';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Header from './components/common/Header';
+import Post from './pages/Post';
+import Users from './pages/Users';
+
 function App() {
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/top" element={<Top />} />
+        <Route path="/top/*" element={<Top />}>
+          <Route path=":post" element={<Post />} />
+          <Route path=":users" element={<Users />} />
+        </Route>
         <Route path="/new" element={<New />} />
         <Route path="/show" element={<Show />} />
         <Route path="/ask" element={<Ask />} />
