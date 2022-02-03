@@ -1,7 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Responsive from './common/Responsive';
-import { AgoHour } from './common/Time';
+import { Ago } from './common/Time';
 import TodayTitle from './TodayTitle';
 const TodayTopBlock = styled(Responsive)`
   background: ${({ theme }) => theme.navColor};
@@ -67,7 +68,7 @@ const TodayTop = ({ top }) => {
                   <div className="info">
                     <span>{post.by}</span>
                     <span>100 point</span>
-                    <span>{AgoHour(post.time)} hours ago</span>
+                    <span>{Ago(post.time)}</span>
                   </div>
                 </li>
               </ul>

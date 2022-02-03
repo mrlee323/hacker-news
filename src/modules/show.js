@@ -5,14 +5,7 @@ import createRequestThunk from '../lib/createRequestThunk';
 const GET_SHOW = 'show/GET_SHOW';
 const GET_SHOW_SUCCESS = 'show/GET_SHOW_SUCCESS';
 
-export const getShow = (indexOfFirst, indexOfLast, perPage) =>
-  createRequestThunk(
-    GET_SHOW,
-    api.getShow,
-    indexOfFirst,
-    indexOfLast,
-    perPage,
-  )();
+export const getShow = createRequestThunk(GET_SHOW, api.getShow);
 
 const initialState = {
   shows: null,

@@ -1,14 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
-import Responsive from './common/Responsive';
 import ListBox from './common/ListBox';
 import ListUser from './common/ListUser';
 
-const NewItem = ({ news }) => {
+const ShowItem = ({ shows }) => {
   return (
     <>
-      {news &&
-        news.map((item, index) => (
+      {shows &&
+        shows.map((item, index) => (
           <ListBox kewy={index}>
             <a href={`${item.url}`} target="_blank" rel="noreferrer">
               <h3>{item.title}</h3>
@@ -25,4 +23,4 @@ const NewItem = ({ news }) => {
   );
 };
 
-export default NewItem;
+export default ShowItem;

@@ -5,7 +5,7 @@ import Responsive from './common/Responsive';
 import { ReactComponent as Update } from '../assets/images/icon=updated.svg';
 import { ReactComponent as TimeIcon } from '../assets/images/bx_bx-time.svg';
 import { ReactComponent as Arrow } from '../assets/images/icon=arrow_right.svg';
-import Time from './common/Time';
+import { Time } from './common/Time';
 
 const TodayBlock = styled(Responsive)`
   width: 390px;

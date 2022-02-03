@@ -5,8 +5,7 @@ import createRequestThunk from '../lib/createRequestThunk';
 const GET_NEW = 'new/GET_NEW';
 const GET_NEW_SUCCESS = 'new/GET_NEW_SUCCESS';
 
-export const getNew = (indexOfFirst, indexOfLast, perPage) =>
-  createRequestThunk(GET_NEW, api.getNew, indexOfFirst, indexOfLast, perPage)();
+export const getNew = createRequestThunk(GET_NEW, api.getNew);
 
 const initialState = {
   news: null,

@@ -6,7 +6,7 @@ const GET_JOB = 'job/GET_JOB';
 const GET_JOB_SUCCESS = 'job/GET_JOB_SUCCESS';
 
 export const getJob = createRequestThunk(GET_JOB, api.getJob);
-// indexOfFirst, indexOfLast, perPage
+
 const initialState = {
   jobs: null,
   count: null,

@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Responsive from './Responsive';
 import NavMenu from './NavMenu';
-import Time from './Time';
+import { Time } from './Time';
 import { ReactComponent as Battery } from '../../assets/images/Battery.svg';
 import { ReactComponent as Wifi } from '../../assets/images/Wifi.svg';
 import { ReactComponent as Signal } from '../../assets/images/Cellular Connection.svg';

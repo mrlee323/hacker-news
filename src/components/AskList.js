@@ -1,62 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import AskUser from './AskUser';
+import DropDown from '../components/common/DropDown';
+import Mode from '../components/common/Mode';
+import AskItem from '../components/AskItem';
 
-const Contents = styled.div`
-  background: #fff;
-  .title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: ${({ theme }) => theme.textColor};
-    padding: 0.75rem 1.25rem 0.25rem;
-    line-height: 1.5;
-  }
-  .content {
-    color: #727272;
-    font-size: 0.88rem;
-    line-height: 1.25;
-    padding: 0.375rem 1.25rem 0.75rem;
-  }
-  .times {
+const AskListBlock = styled.div`
+  padding: 1.5rem 1.25rem;
+  box-sizing: border-box;
+  .sort {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 0 1.25rem 0.8rem;
-    .time {
-      color: #949494;
-      font-size: 0.8rem;
-      right: 0;
-    }
-  }
-  .shadow {
-    background: #efefef;
-    height: 0.75rem;
-    box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.6rem;
   }
 `;
-
-const AskList = ({ time }) => {
-  const today = parseInt(Date.now() / 1000);
-  const date = Math.round((today - { time }) / (60 * 60));
+const AskList = () => {
   return (
-    <>
-      <Contents>
-        <h4 className="title">
-          <span style={{ color: '#ED702D' }}>AskLIst HN:</span> Why hasn't music
-          been disrupted yet in the sam way movies have been?
-        </h4>
-        <p className="content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus non
-          elementum neque pulvinar consectetur nunc tellus nullam viverra. Nulla
-          amet diam dignissim diam,
-        </p>
-        <div className="times">
-          <div />
-          <p className="time">{date}hours ago</p>
-        </div>
-        <AskUser />
-        <div className="shadow" />
-      </Contents>
-    </>
+    <AskListBlock>
+      <div className="sort">
+        <DropDown />
+        <Mode />
+      </div>
+      <AskItem />
+      <AskItem />
+      <AskItem />
+      <AskItem />
+    </AskListBlock>
   );
 };
 

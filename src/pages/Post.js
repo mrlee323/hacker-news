@@ -1,27 +1,13 @@
 import React from 'react';
-import ListBox from '../components/common/ListBox';
-import ListUser from '../components/common/ListUser';
 import CardBox from '../components/common/CardBox';
 import CardUser from '../components/common/CardUser';
+import PostContainer from '../container/PostContainer';
 
-const Post = ({ posts }) => {
+const Post = () => {
   return (
-    <div className="post">
-      {posts &&
-        posts.map((post, index) => (
-          <ListBox>
-            <a href={`${post.url}`} target="_blank" rel="noreferrer">
-              <h3>{post.title}</h3>
-            </a>
-            <ListUser
-              id={post.by}
-              point={post.score}
-              time={post.time}
-              descendants={post.descendants}
-            />
-          </ListBox>
-        ))}
-    </div>
+    <section className="post">
+      <PostContainer />
+    </section>
   );
 };
 

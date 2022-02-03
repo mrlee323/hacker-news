@@ -5,14 +5,7 @@ import createRequestThunk from '../lib/createRequestThunk';
 const GET_POST = 'post/GET_POST';
 const GET_POST_SUCCESS = 'post/GET_POST_SUCCESS';
 
-export const getPost = (indexOfFirst, indexOfLast, perPage) =>
-  createRequestThunk(
-    GET_POST,
-    api.getPost,
-    indexOfFirst,
-    indexOfLast,
-    perPage,
-  )();
+export const getPost = createRequestThunk(GET_POST, api.getPost);
 
 const initialState = {
   posts: null,

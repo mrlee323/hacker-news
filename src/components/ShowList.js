@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import Responsive from '../components/common/Responsive';
+import ShowItem from './ShowItem';
 import DropDown from '../components/common/DropDown';
 import Mode from './common/Mode';
-import JobItem from './JobItem';
 
-const JobListBlock = styled.div`
+const ShowListBlock = styled(Responsive)`
   padding: 1.5rem 1.25rem;
+  box-sizing: border-box;
   .sort {
     display: flex;
     align-items: center;
@@ -13,17 +15,16 @@ const JobListBlock = styled.div`
     margin-bottom: 1.6rem;
   }
 `;
-
-const JobList = ({ jobs }) => {
+const ShowList = ({ shows }) => {
   return (
-    <JobListBlock>
+    <ShowListBlock>
       <div className="sort">
         <DropDown />
         <Mode />
       </div>
-      <JobItem jobs={jobs} />
-    </JobListBlock>
+      <ShowItem shows={shows} />
+    </ShowListBlock>
   );
 };
 
-export default JobList;
+export default ShowList;

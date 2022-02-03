@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
+import React from 'react';
 import ListBox from './common/ListBox';
-import { AgoHour } from './common/Time';
+import { Ago } from './common/Time';
 
 const JobItem = ({ jobs }) => {
   return (
-    <div>
+    <>
       {jobs &&
         jobs.map((job, index) => (
           <ListBox key={index}>
@@ -13,11 +13,11 @@ const JobItem = ({ jobs }) => {
             </a>
             <div className="info">
               <div>url</div>
-              <div>{AgoHour(job.time)} hours ago</div>
+              <div>{Ago(job.time)}</div>
             </div>
           </ListBox>
         ))}
-    </div>
+    </>
   );
 };
 

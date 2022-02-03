@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { ReactComponent as UserIcon } from '../../assets/images/icon=user.svg';
 import { ReactComponent as CommentIcon } from '../../assets/images/icon=comment.svg';
 import { NavLink } from 'react-router-dom';
+import { Ago } from './Time';
 const ListUserBlock = styled.div`
   margin-top: 1.25rem;
   display: flex;
@@ -41,12 +42,6 @@ const ListUserBlock = styled.div`
 `;
 
 const ListUser = ({ id, point, descendants, time, childeren, ...rest }) => {
-  const times = useMemo(() => {
-    const today = parseInt(Date.now() / 1000);
-    const date = Math.round((today - time) / (60 * 60));
-    return date;
-  }, [time]);
-
   return (
     <ListUserBlock {...rest}>
       <div className="userId">
@@ -55,7 +50,7 @@ const ListUser = ({ id, point, descendants, time, childeren, ...rest }) => {
           <p className="id">{id}</p>
         </NavLink>
         <p className="score">{point} points</p>
-        <p className="time">{times} days ago</p>
+        <p className="time">{Ago(time)}</p>
       </div>
       <div className="comentCount">
         <CommentIcon />

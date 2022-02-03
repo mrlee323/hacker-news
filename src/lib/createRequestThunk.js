@@ -1,13 +1,7 @@
-import { getItem } from '../lib/api';
+import { getItem } from './api';
 import { startLoading, finishLoading } from '../modules/loading';
 
-const createRequestThunk = (
-  type,
-  request,
-  // indexOfFirst,
-  // indexOfLast,
-  // perPage,
-) => {
+const createRequestThunk = (type, request) => {
   const SUCCESS = `${type}_SUCCESS`;
   const FAILURE = `${type}_FAILURE`;
 
@@ -16,17 +10,17 @@ const createRequestThunk = (
     dispatch(startLoading(type));
     try {
       const response = await request();
-      const ids = response.data;
-      const pageCount = ids.length / 20;
-      const slice = ids.slice(0, 20);
+      const arr = response.data;
+      // const pageCount = arr.length / 20;
+      // const slice = arr.slice(0, 15);
       const res = [];
-      slice.map(async (id) => {
-        const data = await getItem(id);
-        res.push(data.data);
+      arr.map(async (id) => {
+        const response = await getItem(id);
+        res.push(response.data);
       });
       dispatch({
         type: SUCCESS,
-        payload: { item: res, page: pageCount },
+        payload: { item: res, page: null },
       });
       dispatch(finishLoading(type));
     } catch (e) {

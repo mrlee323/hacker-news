@@ -1,4 +1,4 @@
-const Time = () => {
+export const Time = () => {
   const date = new Date();
   const hour = date.getHours();
   const min = date.getMinutes();
@@ -6,22 +6,22 @@ const Time = () => {
   return [hour, min];
 };
 
-export const AgoHour = (time) => {
+export const Ago = (time) => {
   const today = parseInt(Date.now() / 1000);
-  const date = Math.round((today - time) / (60 * 60));
-  return date;
+  if (today - time > 60 * 60 * 24 * 365) {
+    const date = Math.round((today - time) / (60 * 60 * 24 * 365));
+    return `${date} years ago`;
+  } else if (today - time > 60 * 60 * 24 * 31) {
+    const date = Math.round((today - time) / (60 * 60 * 24 * 31));
+    return `${date} months ago`;
+  } else if (today - time > 60 * 60 * 24) {
+    const date = Math.round((today - time) / (60 * 60 * 24));
+    return `${date} days ago`;
+  } else if (today - time > 60 * 60) {
+    const date = Math.round((today - time) / (60 * 60));
+    return `${date} hours ago`;
+  } else if (today - time > 60) {
+    const date = Math.round((today - time) / 60);
+    return `${date} minutes ago`;
+  }
 };
-
-export const AgoMin = (time) => {
-  const today = parseInt(Date.now() / 1000);
-  const date = Math.round((today - time) / 60);
-  return date;
-};
-
-export const AgoDay = (time) => {
-  const today = parseInt(Date.now() / 1000);
-  const date = Math.round((today - time) / (60 * 60 * 24));
-  return date;
-};
-
-export default Time;

@@ -56,13 +56,14 @@ const TopUsers = () => {
         <li>UserName</li>
         <li>Karma</li>
       </ul>
-      {/* {users.map((post, index) => (
-        <ul className="data" key={index}>
-          <li>rank</li>
-          <li>id</li>
-          <li className="karma">karma</li>
-        </ul>
-      ))} */}
+      {users &&
+        users.map((post, index) => (
+          <ul className="data" key={index}>
+            <li>rank</li>
+            <li>id</li>
+            <li className="karma">karma</li>
+          </ul>
+        ))}
     </TopUsersBlock>
   );
 };

@@ -11,7 +11,6 @@ import NotFound from './pages/NotFound';
 import Header from './components/common/Header';
 import Users from './pages/Users';
 import TopUsers from './pages/TopUsers';
-import PostContainer from './container/PostContainer';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import {
@@ -21,6 +20,7 @@ import {
   getTopPost,
   getTopShow,
 } from './modules/top';
+import Post from './pages/Post';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/top" element={<Top />}>
-          <Route path="post" element={<PostContainer />} />
+          <Route path="post" element={<Post />} />
           <Route path="user" element={<TopUsers />} />
         </Route>
         <Route path="/users/:username" element={<Users />} />
