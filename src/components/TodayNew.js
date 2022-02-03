@@ -16,6 +16,7 @@ const TodayNewBlock = styled(Responsive)`
     background: ${({ theme }) => theme.postColor};
     border: ${({ theme }) => theme.topBoxBorderColor};
     padding: 0 0.9rem;
+    box-sizing: border-box;
 
     .list {
       padding: 0.9rem 0;
