@@ -7,6 +7,15 @@ export const lightTheme = {
   iconColor: '#000',
   postColor: '#fff',
   bdColor: '#dfdfdf',
+  arrowColor: '#202020',
+  shadowColor:
+    '0px 2px 3px rgba(0, 0, 0, 0.05), 0px 6px 10px rgba(0, 0, 0, 0.05)',
+  moreArrowColor: '#727272',
+  userIcon: '#727272',
+  userName: '#3f3f3f',
+  userSmallIcon: '#727272',
+  topbackColor: '#efefef',
+  topBoxBorderColor: '.5px solid #DFDFDF',
 };
 
 export const darkTheme = {
@@ -16,8 +25,16 @@ export const darkTheme = {
   headerColor: '#292c33',
   navColor: '#292c33',
   iconColor: '#fff',
-  postColor: '#383838',
+  postColor: '#343538',
   bdColor: '#555555',
+  arrowColor: '#ed702d',
+  shadowColor: '0px 2px 6px rgba(0, 0, 0, 0.1), 0px 6px 8px rgba(0, 0, 0, 0.2)',
+  moreArrowColor: '#ed702d',
+  userIcon: '#ffffff',
+  userName: '#ffffff',
+  userSmallIcon: '#949494',
+  topbackColor: '#343538',
+  topBoxBorderColor: 'none',
 };
 
 export const theme = {

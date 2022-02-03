@@ -25,7 +25,7 @@ const Box = styled.div`
   left: 0;
   transition: left ease-in 0.2s;
   ${(props) =>
-    props.page === '/top/:users' &&
+    props.page === '/top/user' &&
     css`
       left: 10.6rem;
     `}
@@ -52,15 +52,12 @@ const StyleLink = styled(NavLink)`
 
 const Category = () => {
   const { pathname } = useLocation();
-
-  const Slide = () => {};
   return (
     <CategoryBlock>
       <Box page={pathname} />
-      <StyleLink to=":post" page={pathname}>
-        Post
-      </StyleLink>
-      <StyleLink to=":users" style={{ left: '63%' }} onClick={Slide}>
+
+      <StyleLink to="post">Post</StyleLink>
+      <StyleLink to="user" style={{ left: '63%' }}>
         Users
       </StyleLink>
     </CategoryBlock>

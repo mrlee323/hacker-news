@@ -6,12 +6,12 @@ const Menu = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0.5rem;
+  padding: 0 20px;
   background: ${({ theme }) => theme.navColor};
 `;
 const StyledNavLink = styled(NavLink)`
   display: block;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 0.85rem;
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--gray500);
